@@ -1,19 +1,28 @@
-import java.util.LinkedList;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class TrainConsistManagementApp {
-   public static void main(String[] args) {
-        System.out.println("=== Train Consist Management App ===");    
-        LinkedList<String> trainConsist = new LinkedList<>();  
-        trainConsist.add("Engine");
-        trainConsist.add("Sleeper");
-        trainConsist.add("AC");
-        trainConsist.add("Cargo");
-        trainConsist.add("Guard");
-        System.out.println("Initial Train: " + trainConsist);        
-        trainConsist.add(2, "Pantry Car");
-        System.out.println("After adding Pantry Car: " + trainConsist);       
-        trainConsist.removeFirst();
-        trainConsist.removeLast();       
-        System.out.println("Final Train Consist: " + trainConsist);
-        System.out.println("Ordered structure maintained successfully.");
-    }
+
+     public static void main(String[] args) {
+
+          // Step 1: Welcome Message
+          System.out.println("=== Train Consist Management App ===");
+
+          // Step 2: Create LinkedHashSet
+          Set<String> trainFormation = new LinkedHashSet<>();
+
+          // Step 3: Add bogies
+          trainFormation.add("Engine");
+          trainFormation.add("Sleeper");
+          trainFormation.add("Cargo");
+          trainFormation.add("Guard");
+
+          // Step 4: Add duplicate
+          trainFormation.add("Sleeper"); // duplicate (ignored)
+
+          // Step 5: Display final formation
+          System.out.println("Final Train Formation: " + trainFormation);
+
+          System.out.println("Duplicates are removed, order is preserved.");
+     }
 }
